@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Professional Website Development</title>
+<title>Shree Shyam Software Solutions</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <style>
 body{margin:0;font-family:Arial;background:#f4f6f8}
-header{background:#1e40af;color:#fff;padding:30px;text-align:center}
+header{background:#1e40af;color:#fff;padding:35px;text-align:center}
+header h1{margin:0;font-size:34px}
+header p{margin:8px 0 15px;font-size:18px}
 nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:bold}
 .section{max-width:1000px;margin:auto;padding:40px;background:#fff;margin-top:20px}
 h2{color:#1e40af}
-.btn{background:#2563eb;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px}
+input,textarea{width:100%;padding:10px;margin:10px 0}
+.btn{background:#2563eb;color:#fff;padding:12px 20px;border:none;border-radius:6px}
 .whatsapp{
 position:fixed;bottom:20px;right:20px;
 background:#25D366;color:white;
@@ -21,8 +34,9 @@ font-size:20px;text-decoration:none}
 <body>
 
 <header>
-<h1>आपकी वेबसाइट बनवाएं</h1>
+<h1>Shree Shyam Software Solutions</h1>
 <p>Grow करें प्रोफेशनल तरीके से</p>
+
 <nav>
 <a href="/">Home</a>
 <a href="/pricing">Pricing</a>
@@ -31,19 +45,26 @@ font-size:20px;text-decoration:none}
 </header>
 
 <div class="section">
-<h2>हमारी सेवाएं</h2>
+<h2>Our Services | हमारी सेवाएं</h2>
 <ul>
-<li>Professional Business Website</li>
-<li>Mobile Friendly Design</li>
-<li>SEO Ready</li>
-<li>Fast & Secure Delivery</li>
+<li>Professional Business Websites</li>
+<li>Mobile Friendly & Fast Loading</li>
+<li>SEO Ready for Google Ranking</li>
+<li>Secure & Affordable Solutions</li>
 </ul>
-<a class="btn" href="/pricing">View Pricing</a>
 </div>
 
-<a class="whatsapp"
-href="https://wa.me/919772237618"
-target="_blank">💬</a>
+<div class="section">
+<h2>Get Free Consultation</h2>
+<form method="post">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Mobile Number" required>
+<textarea name="message" placeholder="Your Requirement"></textarea>
+<button class="btn" type="submit">Submit</button>
+</form>
+</div>
+
+<a class="whatsapp" href="https://wa.me/919772237618" target="_blank">💬</a>
 
 </body>
 </html>
