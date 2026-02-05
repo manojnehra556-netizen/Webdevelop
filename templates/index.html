@@ -29,9 +29,9 @@ header{
 }
 
 .tagline{
-    font-size:20px;
-    margin:15px 0 32px;
-    opacity:0.85;
+    font-size:18px;
+    margin:12px 0 30px;
+    opacity:0.9;
 }
 
 nav{
@@ -45,10 +45,9 @@ nav a{
     font-size:18px;
 }
 
-/* MAIN CTA */
+/* CTA */
 .consult-btn{
     display:inline-block;
-    margin-top:10px;
     padding:22px 48px;
     background:#22c55e;
     color:#ffffff;
@@ -57,7 +56,6 @@ nav a{
     border-radius:60px;
     text-decoration:none;
     box-shadow:0 15px 35px rgba(0,0,0,0.35);
-    letter-spacing:1px;
 }
 .consult-btn:hover{
     background:#16a34a;
@@ -78,7 +76,33 @@ nav a{
     margin-bottom:45px;
 }
 
-/* SERVICE CARDS */
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.about-box{
+    background:#ffffff;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-box h3{
+    color:#1e40af;
+    font-size:22px;
+    margin-top:0;
+}
+
+.about-box p,
+.about-box li{
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* SERVICES */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -119,7 +143,7 @@ input, textarea{
     cursor:pointer;
 }
 
-/* BIG PHONE */
+/* PHONE */
 .phone-big{
     text-align:center;
     font-size:30px;
@@ -128,7 +152,7 @@ input, textarea{
     margin-top:35px;
 }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -151,14 +175,12 @@ footer{
     font-size:14px;
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE */
 @media (max-width:600px){
     .brand-name{font-size:36px;}
-    .tagline{font-size:14px;}
-    .consult-btn{
-        font-size:22px;
-        padding:20px 40px;
-    }
+    .tagline{font-size:16px;}
+    nav a{font-size:17px;}
+    .consult-btn{font-size:22px;padding:20px 40px;}
 }
 </style>
 </head>
@@ -179,6 +201,38 @@ footer{
     <a href="#lead" class="consult-btn">FREE CONSULTATION</a>
 </header>
 
+<!-- ABOUT US -->
+<div class="section">
+    <h2>About Us | हमारे बारे में</h2>
+    <div class="about-grid">
+        <div class="about-box">
+            <h3>Who We Are</h3>
+            <p>
+                <b>Shree Shyam Software Solutions</b> ek professional web development service hai
+                jo businesses ko online strong aur visible banane me help karti hai.
+            </p>
+        </div>
+        <div class="about-box">
+            <h3>What We Do</h3>
+            <ul>
+                <li>Business & Informational Websites</li>
+                <li>Mobile Friendly & Fast Design</li>
+                <li>SEO Ready Structure</li>
+                <li>Website Redesign</li>
+            </ul>
+        </div>
+        <div class="about-box">
+            <h3>What We Offer</h3>
+            <ul>
+                <li>Affordable Pricing</li>
+                <li>Professional Look</li>
+                <li>Fast Delivery</li>
+                <li>Direct Support</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <!-- SERVICES -->
 <div class="section">
     <h2>Our Services</h2>
@@ -188,17 +242,15 @@ footer{
             <h3>Business Website</h3>
             <p>Professional websites for growing businesses.</p>
         </div>
-
         <div class="card">
             <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
             <h3>SEO Ready</h3>
-            <p>Google ranking ke liye optimized structure.</p>
+            <p>Optimized structure for Google ranking.</p>
         </div>
-
         <div class="card">
             <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png">
             <h3>Fast Delivery</h3>
-            <p>Quick, secure & reliable project delivery.</p>
+            <p>Quick & secure project completion.</p>
         </div>
     </div>
 </div>
@@ -206,7 +258,6 @@ footer{
 <!-- LEAD FORM -->
 <div class="section" id="lead">
     <h2>Get Free Consultation</h2>
-
     <form method="post">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="tel" name="phone" placeholder="Mobile Number" required>
