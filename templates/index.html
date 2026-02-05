@@ -12,7 +12,7 @@ body{
   color:#1f2937;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   background:linear-gradient(135deg,#1e40af,#2563eb);
   color:#fff;
@@ -35,7 +35,7 @@ header{
   display:block;
 }
 
-/* NAV CARDS */
+/* ================= NAV CARDS ================= */
 .nav-cards{
   display:flex;
   justify-content:center;
@@ -64,7 +64,7 @@ header{
   transform:translateY(-6px) scale(1.05);
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .consult-btn{
   display:inline-block;
   padding:22px 48px;
@@ -77,7 +77,7 @@ header{
   box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
-/* STATS STRIP */
+/* ================= STATS ================= */
 .stats-strip{
   display:flex;
   justify-content:center;
@@ -95,7 +95,7 @@ header{
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section{
   max-width:1100px;
   margin:auto;
@@ -108,7 +108,7 @@ header{
   margin-bottom:45px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -128,7 +128,7 @@ header{
   border-radius:16px;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -150,7 +150,7 @@ header{
   margin-bottom:18px;
 }
 
-/* PROCESS */
+/* ================= PROCESS ================= */
 .process-flow{
   display:flex;
   align-items:center;
@@ -181,7 +181,7 @@ header{
   color:#22c55e;
 }
 
-/* TESTIMONIAL */
+/* ================= TESTIMONIAL ================= */
 .testimonial{
   background:#fff;
   padding:30px;
@@ -197,7 +197,7 @@ header{
   margin-bottom:15px;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 input,textarea{
   width:100%;
   padding:14px;
@@ -222,20 +222,42 @@ input,textarea{
   margin-top:35px;
 }
 
-/* WHATSAPP */
-.whatsapp{
+/* ================= FLOATING CALL + WHATSAPP ================= */
+.floating-buttons{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#25D366;
-  color:white;
-  padding:18px 22px;
-  border-radius:50%;
-  font-size:22px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:9999;
+}
+.call-btn,
+.whatsapp-btn{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 22px;
+  border-radius:50px;
   text-decoration:none;
+  font-size:18px;
+  font-weight:800;
+  color:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+.call-btn{
+  background:#2563eb;
+}
+.whatsapp-btn{
+  background:#25D366;
+}
+.call-btn img,
+.whatsapp-btn img{
+  width:34px;
+  height:34px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   background:#0f172a;
   color:#cbd5e1;
@@ -243,7 +265,7 @@ footer{
   padding:22px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
   .about-grid{grid-template-columns:1fr;}
   .brand-name{font-size:36px;}
@@ -268,9 +290,10 @@ footer{
   </div>
 
   <a href="#lead" class="consult-btn">FREE CONSULTATION</a>
+  <p style="margin-top:10px;font-size:14px">✔ No Cost • ✔ No Obligation</p>
 </header>
 
-<!-- TOP STATS -->
+<!-- STATS -->
 <div class="stats-strip">
   <div class="stat-item">50+ Projects</div>
   <div class="stat-item">3+ Years Experience</div>
@@ -355,10 +378,22 @@ footer{
     <textarea name="message" placeholder="Tell us about your business"></textarea>
     <button class="submit-btn">Submit</button>
   </form>
-  <div class="phone-big">📞 <a href="tel:9772237618">97722 37618</a></div>
+  <div class="phone-big">
+    📞 <a href="tel:9772237618">97722 37618</a>
+  </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/919772237618">💬</a>
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+  <a href="tel:9772237618" class="call-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png">
+    Call Now
+  </a>
+  <a href="https://wa.me/919772237618" target="_blank" class="whatsapp-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    WhatsApp
+  </a>
+</div>
 
 <footer>
 © 2026 SHREE SHYAM SOFTWARE SOLUTIONS | All Rights Reserved
