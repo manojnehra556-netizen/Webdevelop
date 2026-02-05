@@ -4,111 +4,79 @@
 <meta charset="UTF-8">
 <title>श्री श्याम सॉफ्टवेयर सॉल्यूशंस</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
-
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f4f6f8
-}
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#1f2937}
 header{
-    background:#1e40af;
-    color:#fff;
-    padding:40px 20px;
-    text-align:center
-}
-header h1{
-    margin:0;
-    font-size:42px;   /* 🔥 Larger font */
-    font-weight:700;
-}
-header p{
-    margin:10px 0 18px;
-    font-size:20px;
-}
-nav a{
-    color:#fff;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:16px;
-}
-.section{
-    max-width:1000px;
-    margin:auto;
-    padding:40px;
-    background:#fff;
-    margin-top:20px
-}
-h2{color:#1e40af}
-input,textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0
-}
-.btn{
-    background:#2563eb;
-    color:#fff;
-    padding:12px 20px;
-    border:none;
-    border-radius:6px
-}
+background:linear-gradient(135deg,#1e40af,#2563eb);
+color:#fff;padding:70px 20px;text-align:center}
+header h1{font-size:46px;margin:0;font-weight:800}
+header p{font-size:20px;margin:12px 0 18px}
+nav a{color:#fff;margin:0 18px;text-decoration:none;font-weight:bold}
+.hero-img{max-width:380px;margin-top:30px}
+.section{max-width:1100px;margin:auto;padding:60px 20px}
+h2{text-align:center;color:#1e40af;font-size:32px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{
+background:#fff;padding:30px;border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);text-align:center}
+.card img{width:70px;margin-bottom:15px}
+.btn{background:#2563eb;color:#fff;padding:14px 28px;border:none;
+border-radius:30px;font-size:16px;cursor:pointer}
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:14px 18px;
-    border-radius:50%;
-    font-size:20px;
-    text-decoration:none
-}
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;padding:16px 20px;
+border-radius:50%;font-size:22px;text-decoration:none}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>श्री श्याम सॉफ्टवेयर सॉल्यूशंस</h1>
-    <p>Grow करें प्रोफेशनल तरीके से</p>
+<h1>श्री श्याम सॉफ्टवेयर सॉल्यूशंस</h1>
+<p>Grow करें प्रोफेशनल तरीके से</p>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/contact">Contact</a>
-    </nav>
+<nav>
+<a href="/">Home</a>
+<a href="/pricing">Pricing</a>
+<a href="/contact">Contact</a>
+</nav>
+
+<img class="hero-img"
+src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
 </header>
 
 <div class="section">
-    <h2>Our Services | हमारी सेवाएं</h2>
-    <ul>
-        <li>Professional Business Websites</li>
-        <li>Mobile Friendly & Fast Loading</li>
-        <li>SEO Ready for Google</li>
-        <li>Secure & Affordable Solutions</li>
-    </ul>
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
+<h3>Business Website</h3>
+<p>Professional websites for growing businesses</p>
+</div>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+<h3>SEO Ready</h3>
+<p>Google ranking ke liye optimized</p>
+</div>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/270/270798.png">
+<h3>Fast Delivery</h3>
+<p>Quick & secure project completion</p>
+</div>
+</div>
 </div>
 
 <div class="section">
-    <h2>Free Consultation</h2>
-    <form method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name="phone" placeholder="Mobile Number" required>
-        <textarea name="message" placeholder="Your Requirement"></textarea>
-        <button class="btn" type="submit">Submit</button>
-    </form>
+<h2>Free Consultation</h2>
+<form method="post">
+<input name="name" placeholder="Your Name" required><br><br>
+<input name="phone" placeholder="Mobile Number" required><br><br>
+<textarea name="message" placeholder="Your Requirement"></textarea><br><br>
+<button class="btn">Submit</button>
+</form>
 </div>
 
-<a class="whatsapp" href="https://wa.me/919772237618" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/919772237618">💬</a>
 
 </body>
 </html>
