@@ -41,21 +41,17 @@ p{font-size:18px;margin-bottom:25px}
   margin-bottom:10px;
 }
 
-/* BUTTON CONTAINER */
+/* BUTTON ROW */
 .buttons{
-  position:relative;
-  width:220px;
-  height:70px;
-  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:10px;
 }
 
-/* BOTH BUTTONS SAME BASE POSITION */
-.buttons button{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+button{
+  flex:1;
+  padding:14px 0;
   border:none;
   border-radius:40px;
   font-size:18px;
@@ -64,18 +60,16 @@ p{font-size:18px;margin-bottom:25px}
   transition:transform 0.15s ease;
 }
 
-/* YES FIXED */
+/* YES */
 .yes{
   background:#22c55e;
   color:#fff;
-  z-index:1;
 }
 
-/* NO SLIGHTLY ABOVE */
+/* NO */
 .no{
   background:#ef4444;
   color:#fff;
-  z-index:2;
 }
 
 /* HEART RAIN */
@@ -101,7 +95,7 @@ p{font-size:18px;margin-bottom:25px}
 
 <div class="card">
   <div class="heart">❤️</div>
-  <h1 id="name">Hey MY BESTIE NISHA GURJUR ❤️</h1>
+  <h1 id="name">Hey My Love ❤️</h1>
 
   <p>
     I have one important question…<br>
@@ -120,14 +114,11 @@ const params = new URLSearchParams(window.location.search);
 const girlfriendName = params.get("name") || "My Love";
 document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
 
-/* NO BUTTON – LIMITED MOVEMENT (KEY FIX) */
+/* NO BUTTON – ONLY SMALL MOVE */
 function moveNo(){
   const btn = document.getElementById("noBtn");
-
-  // VERY SMALL movement only
-  const x = Math.random() * 40 - 20;  // left-right max 20px
-  const y = Math.random() * 10 - 5;   // up-down max 5px
-
+  const x = Math.random()*20 - 10; // very small
+  const y = Math.random()*10 - 5;
   btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
@@ -145,10 +136,10 @@ function yesClicked(){
       text-align:center;
       font-family:Segoe UI,sans-serif;
     ">
-      <h1 style="font-size:46px;">YAYYYY ❤️🥰</h1>
+      <h1 style="font-size:46px;">HAPPPPPPPPP ❤️🥰</h1>
       <p style="font-size:22px;">
-        Chal bhag BSDK💕<br>
-        Hyyyyyyy thuuuuuuu 🌹
+        CHAL NIKAL BSDK💕<br>
+        HYYYYYYY THUUUUUUU 🌹
       </p>
     </div>
   `;
