@@ -8,28 +8,22 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff4d6d,#ff8fab);
   height:100vh;
   overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
   color:#fff;
-}
-
-/* BACKGROUND IMAGE (after upload) */
-.bg{
-  position:fixed;
-  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("https://drive.google.com/file/d/1RNR606jP9pDU2hB9leUNoNG_38MiPaMe/view?usp=drivesdk");
   background-size:cover;
   background-position:center;
-  filter:brightness(0.6);
-  z-index:-1;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.18);
   padding:40px 30px;
   border-radius:24px;
   box-shadow:0 30px 60px rgba(0,0,0,0.5);
@@ -38,8 +32,16 @@ body{
   backdrop-filter:blur(6px);
 }
 
-h1{font-size:34px;margin-bottom:6px}
-p{font-size:18px;margin-bottom:25px;line-height:1.4}
+h1{
+  font-size:34px;
+  margin-bottom:6px;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:25px;
+  line-height:1.4;
+}
 
 .heart{
   font-size:44px;
@@ -80,21 +82,6 @@ button{
   z-index:2;
 }
 
-/* STEP TEXT FIX */
-.step-text{
-  font-size:14px;
-  font-weight:700;
-  color:#ffe4e6;
-  margin-bottom:8px;
-  letter-spacing:1px;
-}
-
-/* UPLOAD */
-.upload-box{
-  margin-bottom:15px;
-  font-size:14px;
-}
-
 /* HEART RAIN */
 .heart-rain{
   position:fixed;
@@ -116,22 +103,13 @@ button{
 
 <body>
 
-<div class="bg" id="bg"></div>
-
 <div class="card">
-  <div class="upload-box">
-    📸 Select a photo  
-    <input type="file" accept="image/*" onchange="setPhoto(event)">
-  </div>
-
   <div class="heart">❤️</div>
-
-  <div class="step-text">STEP 1</div>
   <h1 id="name">Hey My Love ❤️</h1>
 
   <p>
     I have one important question…<br>
-    Will you be my Valentine? 💕
+    Will you be my Bestfriend to girlfriend? 💕
   </p>
 
   <div class="buttons">
@@ -149,21 +127,9 @@ document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
 /* NO BUTTON RUN */
 function moveNo(){
   const btn = document.getElementById("noBtn");
-  const x = Math.random() * 180 - 90;
-  const y = Math.random() * 80 - 40;
+  const x = Math.random() * 160 - 80;
+  const y = Math.random() * 70 - 35;
   btn.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-/* PHOTO FROM GALLERY */
-function setPhoto(event){
-  const file = event.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e){
-    document.getElementById("bg").style.backgroundImage =
-      `url('${e.target.result}')`;
-  }
-  reader.readAsDataURL(file);
 }
 
 /* YES CLICK */
@@ -182,8 +148,8 @@ function yesClicked(){
     ">
       <h1 style="font-size:46px;">YAYYYY ❤️🥰</h1>
       <p style="font-size:22px;max-width:300px;">
-        You just made my day special 💕<br>
-        Happy Valentine’s Day 🌹
+        Chal bsdk 💕<br>
+        Hyyyyyyy thuuuuuuu nikal dalli🌹
       </p>
     </div>
   `;
