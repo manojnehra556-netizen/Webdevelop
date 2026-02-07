@@ -8,61 +8,91 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-    url("https://images.unsplash.com/photo-1517841905240-472988babdf9");
-  background-size:cover;
-  background-position:center;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fab);
   height:100vh;
   overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   color:#fff;
+}
+
+/* BACKGROUND IMAGE (after upload) */
+.bg{
+  position:fixed;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.6);
+  z-index:-1;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.2);
   padding:40px 30px;
   border-radius:24px;
   box-shadow:0 30px 60px rgba(0,0,0,0.5);
   max-width:360px;
-  z-index:10;
+  text-align:center;
   backdrop-filter:blur(6px);
 }
 
 h1{font-size:34px;margin-bottom:6px}
-p{font-size:18px;margin-bottom:25px}
+p{font-size:18px;margin-bottom:25px;line-height:1.4}
 
 .heart{
   font-size:44px;
   animation:beat 1s infinite;
+  margin-bottom:10px;
 }
 
-/* BUTTONS */
+/* BUTTONS OVERLAP */
 .buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
   position:relative;
+  width:220px;
+  height:70px;
+  margin:auto;
 }
 
 button{
-  padding:14px 28px;
+  padding:14px 30px;
   border:none;
   border-radius:40px;
   font-size:18px;
   font-weight:700;
   cursor:pointer;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
 }
 
-.yes{background:#22c55e;color:#fff}
+.yes{
+  background:#22c55e;
+  color:#fff;
+  z-index:1;
+}
+
 .no{
   background:#ef4444;
   color:#fff;
-  position:absolute;
+  z-index:2;
+}
+
+/* STEP TEXT FIX */
+.step-text{
+  font-size:14px;
+  font-weight:700;
+  color:#ffe4e6;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+
+/* UPLOAD */
+.upload-box{
+  margin-bottom:15px;
+  font-size:14px;
 }
 
 /* HEART RAIN */
@@ -73,12 +103,6 @@ button{
   animation:fall linear infinite;
 }
 
-/* LOADING */
-.loading{
-  font-size:26px;
-  animation:pulse 1s infinite;
-}
-
 @keyframes fall{
   to{transform:translateY(110vh)}
 }
@@ -87,24 +111,24 @@ button{
   50%{transform:scale(1.3)}
   100%{transform:scale(1)}
 }
-@keyframes pulse{
-  0%{opacity:.5}
-  50%{opacity:1}
-  100%{opacity:.5}
-}
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_8d2b3e7c19.mp3" type="audio/mpeg">
-</audio>
+<div class="bg" id="bg"></div>
 
-<div class="card" id="card">
+<div class="card">
+  <div class="upload-box">
+    📸 Select a photo  
+    <input type="file" accept="image/*" onchange="setPhoto(event)">
+  </div>
+
   <div class="heart">❤️</div>
-  <h1 id="name">Hey ❤️</h1>
+
+  <div class="step-text">STEP 1</div>
+  <h1 id="name">Hey My Love ❤️</h1>
+
   <p>
     I have one important question…<br>
     Will you be my Valentine? 💕
@@ -117,20 +141,32 @@ button{
 </div>
 
 <script>
-/* ====== CHANGE NAME HERE ====== */
-const girlfriendName = "BESTIE";   // ← change name
+/* NAME FROM URL */
+const params = new URLSearchParams(window.location.search);
+const girlfriendName = params.get("name") || "My Love";
 document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
 
-/* ====== NO BUTTON RUN ====== */
+/* NO BUTTON RUN */
 function moveNo(){
   const btn = document.getElementById("noBtn");
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 120);
-  btn.style.left = x + "px";
-  btn.style.top = y + "px";
+  const x = Math.random() * 180 - 90;
+  const y = Math.random() * 80 - 40;
+  btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-/* ====== YES CLICK FLOW ====== */
+/* PHOTO FROM GALLERY */
+function setPhoto(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    document.getElementById("bg").style.backgroundImage =
+      `url('${e.target.result}')`;
+  }
+  reader.readAsDataURL(file);
+}
+
+/* YES CLICK */
 function yesClicked(){
   document.body.innerHTML = `
     <div style="
@@ -144,39 +180,21 @@ function yesClicked(){
       text-align:center;
       font-family:Segoe UI,sans-serif;
     ">
-      <div class="loading">Processing your decision... ❤️</div>
+      <h1 style="font-size:46px;">YAYYYY ❤️🥰</h1>
+      <p style="font-size:22px;max-width:300px;">
+        You just made my day special 💕<br>
+        Happy Valentine’s Day 🌹
+      </p>
     </div>
   `;
 
   setTimeout(()=>{
-    document.body.innerHTML = `
-      <div style="
-        height:100vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-        background:linear-gradient(135deg,#ff4d6d,#ff85a1);
-        color:white;
-        text-align:center;
-      ">
-        <h1 style="font-size:46px;">YAYYYYY ❤️🥰</h1>
-        <p style="font-size:22px;max-width:300px;">
-          You just made my day special 💕<br>
-          Happy Valentine’s Day 🌹
-        </p>
-      </div>
-    `;
-  },2500);
-
-  // Auto WhatsApp after YES
-  setTimeout(()=>{
     window.location.href =
       "https://wa.me/?text=I%20said%20YES%20❤️🥰%20Happy%20Valentine's%20Day%20💖";
-  },4500);
+  },3000);
 }
 
-/* ====== HEART RAIN ====== */
+/* HEART RAIN */
 setInterval(()=>{
   const heart = document.createElement("div");
   heart.className = "heart-rain";
@@ -185,7 +203,7 @@ setInterval(()=>{
   heart.style.animationDuration = (Math.random()*3+2)+"s";
   document.body.appendChild(heart);
   setTimeout(()=>heart.remove(),5000);
-},250);
+},300);
 </script>
 
 </body>
