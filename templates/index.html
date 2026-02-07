@@ -8,8 +8,13 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  background:
+    linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url("https://images.unsplash.com/photo-1517841905240-472988babdf9");
+  background-size:cover;
+  background-position:center;
   height:100vh;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -17,32 +22,35 @@ body{
   color:#fff;
 }
 
+/* CARD */
 .card{
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.18);
   padding:40px 30px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.3);
-  max-width:350px;
+  border-radius:24px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  max-width:360px;
+  z-index:10;
+  backdrop-filter:blur(6px);
 }
 
-h1{
-  font-size:34px;
-  margin-bottom:10px;
+h1{font-size:34px;margin-bottom:6px}
+p{font-size:18px;margin-bottom:25px}
+
+.heart{
+  font-size:44px;
+  animation:beat 1s infinite;
 }
 
-p{
-  font-size:18px;
-  margin-bottom:25px;
-}
-
+/* BUTTONS */
 .buttons{
   display:flex;
   justify-content:center;
   gap:20px;
+  position:relative;
 }
 
 button{
-  padding:14px 26px;
+  padding:14px 28px;
   border:none;
   border-radius:40px;
   font-size:18px;
@@ -50,48 +58,79 @@ button{
   cursor:pointer;
 }
 
-.yes{
-  background:#22c55e;
-  color:#fff;
-}
-
+.yes{background:#22c55e;color:#fff}
 .no{
   background:#ef4444;
   color:#fff;
-  position:relative;
+  position:absolute;
 }
 
-.heart{
-  font-size:40px;
-  animation:beat 1s infinite;
+/* HEART RAIN */
+.heart-rain{
+  position:fixed;
+  top:-20px;
+  font-size:22px;
+  animation:fall linear infinite;
 }
 
+/* LOADING */
+.loading{
+  font-size:26px;
+  animation:pulse 1s infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh)}
+}
 @keyframes beat{
   0%{transform:scale(1)}
-  50%{transform:scale(1.2)}
+  50%{transform:scale(1.3)}
   100%{transform:scale(1)}
+}
+@keyframes pulse{
+  0%{opacity:.5}
+  50%{opacity:1}
+  100%{opacity:.5}
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_8d2b3e7c19.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="card">
   <div class="heart">❤️</div>
-  <h1>Hey Chudail</h1>
+  <h1 id="name">Hey ❤️</h1>
   <p>
-    From my heart to yours…  
-    Will you be my bestfriend to girlfriend?💕
-     
+    I have one important question…<br>
+    Will you be my Valentine? 💕
   </p>
 
   <div class="buttons">
     <button class="yes" onclick="yesClicked()">Yes 💖</button>
-    <button class="no" onmouseover="moveNo()">No 🙈</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">No 🙈</button>
   </div>
 </div>
 
 <script>
+/* ====== CHANGE NAME HERE ====== */
+const girlfriendName = "BESTIE";   // ← change name
+document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
+
+/* ====== NO BUTTON RUN ====== */
+function moveNo(){
+  const btn = document.getElementById("noBtn");
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 120);
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+
+/* ====== YES CLICK FLOW ====== */
 function yesClicked(){
   document.body.innerHTML = `
     <div style="
@@ -99,28 +138,54 @@ function yesClicked(){
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      background:linear-gradient(135deg,#ff4d6d,#ff85a1);
+      flex-direction:column;
+      background:linear-gradient(135deg,#ff006e,#ff85a1);
       color:white;
+      text-align:center;
       font-family:Segoe UI,sans-serif;
     ">
-      <div>
-        <h1 style="font-size:42px;">Yayyyy ❤️🥰</h1>
-        <p style="font-size:22px;">
-          chal bsdk 💕<br>
-          Hyyyyyyy thuuuuuuu🤮🤮🤮🤮
-        </p>
-      </div>
+      <div class="loading">Processing your decision... ❤️</div>
     </div>
   `;
+
+  setTimeout(()=>{
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        background:linear-gradient(135deg,#ff4d6d,#ff85a1);
+        color:white;
+        text-align:center;
+      ">
+        <h1 style="font-size:46px;">YAYYYYY ❤️🥰</h1>
+        <p style="font-size:22px;max-width:300px;">
+          You just made my day special 💕<br>
+          Happy Valentine’s Day 🌹
+        </p>
+      </div>
+    `;
+  },2500);
+
+  // Auto WhatsApp after YES
+  setTimeout(()=>{
+    window.location.href =
+      "https://wa.me/?text=I%20said%20YES%20❤️🥰%20Happy%20Valentine's%20Day%20💖";
+  },4500);
 }
 
-function moveNo(){
-  const btn = document.querySelector('.no');
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
-  btn.style.transform = `translate(${x}px, ${y}px)`;
-}
+/* ====== HEART RAIN ====== */
+setInterval(()=>{
+  const heart = document.createElement("div");
+  heart.className = "heart-rain";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (Math.random()*3+2)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+},250);
 </script>
 
 </body>
