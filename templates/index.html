@@ -16,14 +16,14 @@ body{
   color:#fff;
   background:
     linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-    url("https://drive.google.com/file/d/1RNR606jP9pDU2hB9leUNoNG_38MiPaMe/view?usp=drivesdk");
+    url("https://exceptional-sapphire-n55t0javio.edgeone.app/Screenshot_2026-02-02-17-04-47-27_1c337646f29875672b5a61192b9010f9.jpg");
   background-size:cover;
   background-position:center;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.2);
   padding:40px 30px;
   border-radius:24px;
   box-shadow:0 30px 60px rgba(0,0,0,0.5);
@@ -32,16 +32,8 @@ body{
   backdrop-filter:blur(6px);
 }
 
-h1{
-  font-size:34px;
-  margin-bottom:6px;
-}
-
-p{
-  font-size:18px;
-  margin-bottom:25px;
-  line-height:1.4;
-}
+h1{font-size:34px;margin-bottom:6px}
+p{font-size:18px;margin-bottom:25px}
 
 .heart{
   font-size:44px;
@@ -49,25 +41,25 @@ p{
   margin-bottom:10px;
 }
 
-/* BUTTONS OVERLAP */
+/* BUTTONS — PERFECT OVERLAP */
 .buttons{
   position:relative;
   width:220px;
-  height:70px;
+  height:60px;
   margin:auto;
 }
 
-button{
-  padding:14px 30px;
+.buttons button{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  padding:14px 0;
+  width:100%;
   border:none;
   border-radius:40px;
   font-size:18px;
   font-weight:700;
   cursor:pointer;
-  position:absolute;
-  left:0;
-  right:0;
-  margin:auto;
 }
 
 .yes{
@@ -109,7 +101,7 @@ button{
 
   <p>
     I have one important question…<br>
-    Will you be my Bestfriend to girlfriend? 💕
+    Will you be my bestfriend to girlfriend?💕
   </p>
 
   <div class="buttons">
@@ -127,8 +119,8 @@ document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
 /* NO BUTTON RUN */
 function moveNo(){
   const btn = document.getElementById("noBtn");
-  const x = Math.random() * 160 - 80;
-  const y = Math.random() * 70 - 35;
+  const x = Math.random()*200 - 100;
+  const y = Math.random()*80 - 40;
   btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
@@ -147,9 +139,9 @@ function yesClicked(){
       font-family:Segoe UI,sans-serif;
     ">
       <h1 style="font-size:46px;">YAYYYY ❤️🥰</h1>
-      <p style="font-size:22px;max-width:300px;">
-        Chal bsdk 💕<br>
-        Hyyyyyyy thuuuuuuu nikal dalli🌹
+      <p style="font-size:22px;">
+        chal bsdk💕<br>
+        Hyyyyyyy thuuuuuuu 🌹
       </p>
     </div>
   `;
