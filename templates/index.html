@@ -2,165 +2,220 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Be My Valentine ❤️</title>
+<title>Shree Shyam Software Solutions</title>
 
 <style>
 body{
   margin:0;
-  font-family:'Segoe UI',sans-serif;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  color:#1f2937;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#1e40af,#2563eb);
   color:#fff;
-  background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-    url("https://exceptional-sapphire-n55t0javio.edgeone.app/Screenshot_2026-02-02-17-04-47-27_1c337646f29875672b5a61192b9010f9.jpg");
-  background-size:cover;
-  background-position:center;
-}
-
-/* CARD */
-.card{
-  background:rgba(255,255,255,0.22);
-  padding:40px 30px;
-  border-radius:22px;
-  box-shadow:0 25px 50px rgba(0,0,0,0.45);
-  max-width:360px;
+  padding:70px 20px;
   text-align:center;
-  backdrop-filter:blur(6px);
 }
 
-h1{font-size:34px;margin-bottom:6px}
-p{font-size:18px;margin-bottom:25px}
-
-.heart{
-  font-size:44px;
-  animation:beat 1s infinite;
-  margin-bottom:10px;
+.brand-name{
+  font-size:46px;
+  font-weight:900;
+  margin:0;
 }
 
-/* BUTTON ROW */
-.buttons{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
+.tagline{
+  font-size:18px;
   margin-top:10px;
+  opacity:.9;
 }
 
-button{
-  flex:1;
-  padding:14px 0;
-  border:none;
-  border-radius:40px;
+/* NAVIGATION */
+.nav{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
   font-size:18px;
   font-weight:700;
-  cursor:pointer;
-  transition:transform 0.15s ease;
 }
 
-/* YES */
-.yes{
+/* CTA */
+.cta{
+  display:inline-block;
+  margin-top:35px;
+  padding:18px 40px;
   background:#22c55e;
   color:#fff;
-}
-
-/* NO */
-.no{
-  background:#ef4444;
-  color:#fff;
-}
-
-/* HEART RAIN */
-.heart-rain{
-  position:fixed;
-  top:-20px;
   font-size:22px;
-  animation:fall linear infinite;
+  font-weight:800;
+  border-radius:50px;
+  text-decoration:none;
 }
 
-@keyframes fall{
-  to{transform:translateY(110vh)}
+/* SECTION */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
 }
-@keyframes beat{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.25)}
-  100%{transform:scale(1)}
+
+.section h2{
+  text-align:center;
+  font-size:32px;
+  color:#1e40af;
+  margin-bottom:40px;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  background:#fff;
+  padding:20px 30px;
+  border-radius:30px;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ABOUT */
+.about{
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  font-size:18px;
+  line-height:1.8;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.service{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.service img{
+  width:60px;
+  margin-bottom:15px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.contact a{
+  font-size:26px;
+  font-weight:900;
+  color:#1e40af;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5e1;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .brand-name{font-size:34px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <div class="heart">❤️</div>
-  <h1 id="name">Hey My Love ❤️</h1>
+<header>
+  <h1 class="brand-name">SHREE SHYAM SOFTWARE SOLUTIONS</h1>
+  <p class="tagline">Grow करें प्रोफेशनल तरीके से</p>
 
-  <p>
-    I have one important question…<br>
-    Will you be my bestfriend to girlfriend 💕
-  </p>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/contact">Contact</a>
+  </div>
 
-  <div class="buttons">
-    <button class="yes" onclick="yesClicked()">Yes 💖</button>
-    <button class="no" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+  <a href="#contact" class="cta">FREE CONSULTATION</a>
+</header>
+
+<!-- STATS -->
+<div class="section">
+  <div class="stats">
+    <div class="stat">50+ Projects</div>
+    <div class="stat">3+ Years Experience</div>
+    <div class="stat">100% Support</div>
   </div>
 </div>
 
-<script>
-/* NAME FROM URL */
-const params = new URLSearchParams(window.location.search);
-const girlfriendName = params.get("name") || "My Love";
-document.getElementById("name").innerText = "Hey " + girlfriendName + " ❤️";
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Us</h2>
+  <div class="about">
+    Shree Shyam Software Solutions provides professional, fast and
+    affordable website development services for businesses.
+    We help brands grow online with clean design, mobile-friendly layout
+    and SEO-ready structure.
+  </div>
+</div>
 
-/* NO BUTTON – ONLY SMALL MOVE */
-function moveNo(){
-  const btn = document.getElementById("noBtn");
-  const x = Math.random()*20 - 10; // very small
-  const y = Math.random()*10 - 5;
-  btn.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-/* YES CLICK */
-function yesClicked(){
-  document.body.innerHTML = `
-    <div style="
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      background:linear-gradient(135deg,#ff006e,#ff85a1);
-      color:white;
-      text-align:center;
-      font-family:Segoe UI,sans-serif;
-    ">
-      <h1 style="font-size:46px;">HAPPPPPPPPP ❤️🥰</h1>
-      <p style="font-size:22px;">
-        CHAL NIKAL BSDK💕<br>
-        HYYYYYYY THUUUUUUU 🌹
-      </p>
+<!-- SERVICES -->
+<div class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+      <h3>Business Website</h3>
+      <p>Professional websites for all businesses</p>
     </div>
-  `;
+    <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
+      <h3>SEO Ready</h3>
+      <p>Optimized structure for Google ranking</p>
+    </div>
+    <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png">
+      <h3>Fast Delivery</h3>
+      <p>Quick turnaround time</p>
+    </div>
+  </div>
+</div>
 
-  setTimeout(()=>{
-    window.location.href =
-      "https://wa.me/?text=I%20said%20YES%20❤️🥰%20Happy%20Valentine's%20Day%20💖";
-  },3000);
-}
+<!-- CONTACT -->
+<div class="section contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Get your website started today</p>
+  <a href="tel:9772237618">📞 97722 37618</a>
+  <br><br>
+  <a href="https://wa.me/919772237618">💬 WhatsApp Now</a>
+</div>
 
-/* HEART RAIN */
-setInterval(()=>{
-  const heart = document.createElement("div");
-  heart.className = "heart-rain";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.animationDuration = (Math.random()*3+2)+"s";
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),5000);
-},350);
-</script>
+<footer>
+  © 2026 Shree Shyam Software Solutions | All Rights Reserved
+</footer>
 
 </body>
 </html>
